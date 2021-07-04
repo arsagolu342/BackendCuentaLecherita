@@ -3,7 +3,7 @@ import * as admin from 'firebase-admin';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
-import {routesMilkman} from './router';
+import {routesliterMilk, routesMilkman} from './router';
 
 admin.initializeApp(functions.config().firebase);
 
@@ -17,6 +17,6 @@ server.use(bodyParser.urlencoded({ extended: false }));
 
 //Rutas
 routesMilkman(server);
-
+routesliterMilk(server);
 export const api = functions.https.onRequest(server);
 export { db };
